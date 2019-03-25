@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>停车</title>
+    <meta name="viewport" content="initial-scale=1, user-scalable=no" />
+    {%load static%}
+    <link rel="stylesheet" href="{%static 'bootstrap/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{%static 'css/park.css' %}">
+    <script src="{%static 'jquery/jquery.js'%}"></script>
+    <script src="{%static 'bootstrap/js/bootstrap.min.js' %}"></script>
+    <script src="{%static 'js/park.js' %}"></script>
+</head>
+<body>
+    <div id="hidden_content">
+        <font id="is_owner">{{request.session.is_owner}}</font>
+        <font id="user_id">{{request.session.user_id}}</font>
+    </div>
+    <div id="banner"></div>
+    <div id="content">
+        <div id="all_position">
+            <div class="group_position">
+                <div>分区A</div>
+                <div id="group_a"></div>
+            </div>
+            <div class="group_position">
+                <div>分区B</div>
+                <div id="group_b" ></div>
+            </div>
+            <div class="group_position">
+                <div>分区C</div>
+                <div id="group_c"></div>
+            </div>
+        </div>
+    </div>
+
+    <div id="finish">
+        <button class="btn btn-success" onclick="finish()">结束停车</button>
+        <font id="warn_message"></font>
+    </div>
+
+     <div class="modal fade" id="parking" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title">获取车牌号</h4>
+          </div>
+          <div class="modal-body">
+              <div>
+                  <div class="form-group">
+                      <label for="way1">方式1:自动识别</label>
+                      <input type="file" class="form-control" name="car_id" id="way1">
+                  </div>
+                  <div class="form-group">
+                      <label for="way2">方式2:手动输入</label>
+                      <input type="text" class="form-control" id="way2">
+                  </div>
+              </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">关闭窗口</button>
+            <button type="button" class="btn btn-primary" onclick="confirm_park()">确认停车</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+</body>
+</html>

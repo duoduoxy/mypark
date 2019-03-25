@@ -1,0 +1,38 @@
+body{
+    background-color: #FAFAD2;
+}
+#hidden_content{
+    display:none;
+}
+#banner{
+    text-align: center;
+    color: #EE3B3B;
+    margin: 0 10px;
+    padding:10px;
+    height: 40px;
+    background-color: #696969;
+}
+#content{
+    margin: 0 10px;
+    background-color: #FFFFFF;
+}
+#all_position{
+    display:flex;
+    margin: 10px auto;
+    text-align:center;
+}
+.group_position{
+    flex:1;
+    border: 0.5px solid yellow;
+}
+.group_position img{
+    width: 40px;
+    height: 70px;
+}
+#finish{
+    text-align:center;
+}
+#warn_message{
+    display:none;
+    text-align:center;
+}

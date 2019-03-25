@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Manage Page</title>
+    <meta name="viewport" content="initial-scale=1, user-scalable=no" />
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/manage.css' %}"/>
+    <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}" />
+    <script src="{% static 'jquery/jquery.js' %}"></script>
+    <script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/manage.js' %}" ></script>
+</head>
+<body>
+    <div class="banner" id="title"><font>小区停车场管理系统</font></div>
+    <div class="banner">
+        <span id="info">
+            <font style="color:#CDCD00;">欢迎:{{request.session.admin_name}}</font>&nbsp;&nbsp;&nbsp;&nbsp;
+            <font onclick="exit_system()" style="color:#EE3B3B;">注销</font>&nbsp;&nbsp;&nbsp;&nbsp;
+        </span>
+    </div>
+
+    <div id="content_for_message">
+        <div class="form-group flex">
+            <label for="message_title" class="col-xs-4 control-label">公告标题</label>
+            <div class="col-xs-8">
+                <input type="text" class="form-control" id="message_title">
+            </div>
+        </div>
+        <div id="message_area">
+            <textarea class="form-control" cols="30" rows="10" id="message_content"></textarea>
+        </div>
+        <button class="btn btn-success flex" id="publish" onclick="publish_notification()">确认发布</button>
+        <font id="publish_result"></font>
+    </div>
+
+    <div id="content_for_comment">
+            <table class="table table-hover" id="comment">
+                <thead>
+                    <td>评论号</td>
+                    <td>用户</td>
+                    <td>时间</td>
+                    <td>状态</td>
+                </thead>
+            </table>
+    </div>
+
+    <div id="message_for_position">
+        <div class="flex">
+            <button class="btn btn-default btn_choice" onclick="show_manage_page()">管理分区</button>
+            <button class="btn btn-default btn_choice" data-toggle="modal" data-target="#delete_position">删除停车位</button>
+        </div>
+        <div id="all_position">
+            <div class="group_position">
+                <div>分区A</div>
+                <div id="group_a"></div>
+            </div>
+            <div class="group_position">
+                <div>分区B</div>
+                <div id="group_b" ></div>
+            </div>
+            <div class="group_position">
+                <div>分区C</div>
+                <div id="group_c"></div>
+            </div>
+        </div>
+        <div id="manage_group">
+            <table class="table table-hover">
+                <thead>
+                    <td>分区</td>
+                    <td>总车位数</td>
+                    <td>被使用数</td>
+                    <td>增加车位</td>
+                </thead>
+                <tr id="fill1"></tr>
+                <tr id="fill2"></tr>
+                <tr id="fill3"></tr>
+            </table>
+        </div>
+    </div>
+
+    <div class="modal fade" id="delete_position" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title">删除指定停车位</h4>
+          </div>
+          <div class="modal-body">
+              <div>
+                  <label for="select_group">分区:</label>
+                  <select id="select_group"class="form-control">
+                      <option value="A">A</option>
+                      <option value="B">B</option>
+                      <option value="C">C</option>
+                  </select>
+                  <div class="form-group">
+                      <label for="position_id">车位号:</label>
+                      <input id="position_id" class="form-control" type="number" placeholder="please input a number!">
+                      <font id="del_result"></font>
+                  </div>
+              </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">关闭窗口</button>
+            <button type="button" class="btn btn-primary" onclick="del_position()">确认删除</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="container-fluid" id="function">
+        <div class="row">
+            <div class="col-xs-4">
+                <div class="glyphicon glyphicon-comment tab" onclick="change_tab(this, 1)"><div>消息通知</div></div></div>
+            <div class="col-xs-4">
+                <div class="glyphicon glyphicon-pencil tab" onclick="change_tab(this, 2)"><div>管理评论</div></div></div>
+            <div class="col-xs-4">
+                <div class="glyphicon glyphicon-road tab" onclick="change_tab(this, 3)"><div>车位管理</div></div></div>
+        </div>
+    </div>
+</body>
+</html>

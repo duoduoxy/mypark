@@ -1,0 +1,26 @@
+body{
+    background-color: #FAFAD2;
+}
+#hidden_content{
+    display:none;
+}
+#banner{
+    background-image: url(/static/image/banner.jpg);
+    height: 200px;
+    text-align:center;
+}
+#banner img{
+    margin:10px;
+    height:80px;
+}
+#content div{
+    background-color: #FFFFFF;
+    margin-top:2px;
+    height:45px;
+    padding:12px;
+
+}
+.info{
+    color: #9A32CD;
+    float:right;
+}

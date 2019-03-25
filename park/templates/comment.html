@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>评论</title>
+    <meta name="viewport" content="initial-scale=1, user-scalable=no" />
+    {%load static %}
+    <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{%static 'css/comment.css' %}">
+    <script src="{% static 'jquery/jquery.js' %}"></script>
+    <script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/comment.js' %}"></script>
+</head>
+<body>
+    <div id="hidden_content">
+        <font id="user_id">{{request.session.user_id}}</font>
+    </div>
+    <div id="banner">
+        <font>评价页面</font>
+    </div>
+    <div id="content">
+        <div id="comment">
+            <textarea id="comment_content" class="form-control"></textarea>
+            <input type="button" class="btn btn-primary" value="提交" onclick="submit_comment()">
+        </div>
+        <font id="submit_result"></font>
+        <div id="star">
+            <div id="star1" class="star">
+                <div class="star_col_1">卫生</div>
+                <div class="star_col_2">
+                    <div class="five_star">
+                        <img src="{%static 'image/yellow_heart.jpg' %}" onclick="change_star(this)" alt="">
+                        <img src="{%static 'image/yellow_heart.jpg' %}" onclick="change_star(this)" alt="">
+                        <img src="{%static 'image/yellow_heart.jpg' %}" onclick="change_star(this)" alt="">
+                        <img src="{%static 'image/yellow_heart.jpg' %}" onclick="change_star(this)" alt="">
+                        <img src="{%static 'image/yellow_heart.jpg' %}" onclick="change_star(this)" alt="">
+                    </div>
+                </div>
+                <div class="star_col_3" id="hygiene">很好</div>
+            </div>
+            <div id="star2" class="star">
+                <div class="star_col_1">服务</div>
+                <div class="star_col_2">
+                    <div class="five_star">
+                        <img src="{%static 'image/yellow_heart.jpg' %}" alt="" onclick="change_star(this)">
+                        <img src="{%static 'image/yellow_heart.jpg' %}" alt="" onclick="change_star(this)">
+                        <img src="{%static 'image/yellow_heart.jpg' %}" alt="" onclick="change_star(this)">
+                        <img src="{%static 'image/yellow_heart.jpg' %}" alt="" onclick="change_star(this)">
+                        <img src="{%static 'image/yellow_heart.jpg' %}" alt="" onclick="change_star(this)">
+                    </div>
+                </div>
+                <div class="star_col_3" id="service">很好</div>
+            </div>
+            <div id="star3" class="star">
+                <div class="star_col_1">软件</div>
+                <div class="star_col_2">
+                    <div class="five_star">
+                        <img src="{%static 'image/yellow_heart.jpg'%}" alt="" onclick="change_star(this)">
+                        <img src="{%static 'image/yellow_heart.jpg'%}" alt="" onclick="change_star(this)">
+                        <img src="{%static 'image/yellow_heart.jpg'%}" alt="" onclick="change_star(this)">
+                        <img src="{%static 'image/yellow_heart.jpg'%}" alt="" onclick="change_star(this)">
+                        <img src="{%static 'image/yellow_heart.jpg'%}" alt="" onclick="change_star(this)">
+                    </div>
+                </div>
+                <div class="star_col_3" id="platform">很好</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

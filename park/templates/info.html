@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>个人信息</title>
+    <meta name="viewport" content="initial-scale=1, user-scalable=no"/>
+    {%load static%}
+    <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/info.css' %}">
+    <script src="{% static 'jquery/jquery.js' %}"></script>
+    <script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
+    <script src="{%static 'js/info.js' %}"></script>
+</head>
+<body>
+    <div id="hidden_content">
+        <font id="user_id">{{request.session.user_id}}</font>
+        <font id="is_owner">{{request.session.is_owner}}</font>
+    </div>
+    <div id="banner">
+        <img src="{%static 'image/head_sculpture.jpg' %}" alt="" class="img-circle">
+        <div>
+            <font>{{request.session.user_name}}</font>
+        </div>
+    </div>
+    <div id="content">
+        <div>我的钱包<font class="info" id="balance"></font></div>
+        <div>我的身份<font class="info" id="status"></font></div>
+        <div>我的车位<font class="info" id="position"></font></div>
+        <div>我的包月<font class="info" id="charge">{{request.session.pay_state}}</font></div>
+    </div>
+</body>
+</html>

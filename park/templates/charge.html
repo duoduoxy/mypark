@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>充值</title>
+    <meta name="viewport" content="initial-scale=1, user-scalable=no"/>
+    {%load static%}
+    <link rel="stylesheet" href="{%static 'bootstrap/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{%static 'css/charge.css'%}">
+    <script src="{%static 'jquery/jquery.js'%}"></script>
+    <script src="{%static 'bootstrap/js/bootstrap.min.js'%}"></script>
+    <script src="{%static 'js/charge.js' %}"></script>
+</head>
+<body>
+    <div id="hidden_content">
+        <font id="user_id">{{request.session.user_id}}</font>
+    </div>
+
+    <div id="banner">
+        <font>账户充值</font>
+    </div>
+
+    <div id="content">
+        <div id="tip">
+            <font>备注自己的用户名</font>
+        </div>
+        <img src="{%static 'image/pay.jpg' %}" alt="">
+    </div>
+</body>
+</html>

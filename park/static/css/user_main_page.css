@@ -1,0 +1,52 @@
+#user_info{
+    display:none;
+}
+#banner{
+    margin:10px;
+    margin-top:0;
+}
+#banner img{
+    height: 200px;
+}
+#notification{
+    border-radius:5px;
+    background-color: #515151;
+    height: 30px;
+    text-align: center;
+    color:#7FFF00;
+    margin:10px;
+}
+.flex_lay{
+    display:flex;
+    height:120px;
+}
+.flex_item{
+    padding-top:30px;
+    text-align:center;
+    margin:10px;
+    border-radius:10px;
+    font-size:20px;
+    padding-bottom:10px;
+    color: #EEEE00;
+}
+#info{
+    flex:1;
+    background-color: #EE3B3B;
+}
+#park{
+    flex:1;
+    background-color: #EEB422;
+}
+#charge{
+    flex:1;
+    background-color: #008B00;
+}
+#comment{
+    flex:1;
+    background-color: #483D8B;
+}
+#warn_message{
+    text-align:center;
+    display:none;
+    margin:10px;
+}

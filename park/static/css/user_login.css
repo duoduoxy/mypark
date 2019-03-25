@@ -1,0 +1,29 @@
+body{
+    background-image: url("/static/image/bg3.jpg");
+}
+#app{
+    margin:40px 0;
+}
+.flex1{
+    margin: 10px 20px;
+    display: flex;
+    align-items: center;
+}
+.item1{
+    flex: 1;
+}
+.item2{
+    flex: 3;
+}
+#sub{
+    float: right;
+    margin-right: 20px;
+}
+#reg{
+    float: right;
+}
+#error_input{
+    display:none;
+    margin-top:10px;
+    text-align:center;
+}
